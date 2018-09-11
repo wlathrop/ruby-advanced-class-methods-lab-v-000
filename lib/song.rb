@@ -18,26 +18,25 @@ end
     song
   end
 
-  def self.new_by_name(title) #class constructor
+  def self.new_by_name(title) #constructor
     song = self.new
     song.name = title
     song
   end
 
-  def self.create_by_name(title) #class constructor
+  def self.create_by_name(title) #constructor
     song = self.create
     song.name = title
     song
   end
 
-  def self.find_by_name(title) #class finder
+  def self.find_by_name(title) #finder
     result = self.all.detect {|song| song.name == title}
     result
   end
 
   def self.find_or_create_by_name(title)
-    #either return a matching song instance with that name or create a new song with the name and return the song instance
-    result = self.find_by_name(title)
+        result = self.find_by_name(title)
     if result
       result
     else
